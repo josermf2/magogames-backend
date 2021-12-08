@@ -55,8 +55,9 @@ def get_gameLookup(request, id):
     return Response(r) 
 
 @api_view(['GET'])
-def get_dealLookup(request, deal):    
-    r = requests.get('https://www.cheapshark.com/api/1.0/deals?id='+str(deal)).json()   
+def get_dealLookup(request, deal):   
+    realDeal = deal.replace("_", "%")
+    r = requests.get('https://www.cheapshark.com/api/1.0/deals?id='+str(realDeal)).json()
     return Response(r) 
 
 @api_view(['GET'])

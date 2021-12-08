@@ -8,7 +8,7 @@ urlpatterns = [
     path('externalAPI/home', views.get_homepageDeals),
     path('externalAPI/store', views.get_store),
     path('externalAPI/gameLookup/<int:id>', views.get_gameLookup),
-    path('externalAPI/dealLookup/<str:deal>', views.get_dealLookup),
+    path('externalAPI/dealLookup/<slug:deal>', views.get_dealLookup),
     path('externalAPI/search/<str:title>', views.get_search),
     path('externalAPI/search/min/<str:title>/<int:minprice>', views.get_search),
     path('externalAPI/search/max/<str:title>/<int:maxprice>', views.get_search),
