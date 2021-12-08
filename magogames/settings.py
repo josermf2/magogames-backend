@@ -30,10 +30,21 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
+    ]
+}
+
+
 INSTALLED_APPS = [
+    'magogames_backend.apps.MagogamesBackendConfig',
     'django.contrib.admin',
     'rest_framework',
     'corsheaders',
+    'knox',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
